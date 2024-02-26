@@ -131,8 +131,8 @@ class DeliveryTimeAPI:
 
                 # Convert to timestamp
                 execution_result.deliveryTime = eta_datetime.isoformat()
-            execution_result.number_box_needed = json_response.get("number_box_needed")
-            execution_result.stops_before = json_response.get("stops_before")
+            execution_result.numberBoxNeeded = json_response.get("number_box_needed")
+            execution_result.stopsBefore = json_response.get("stops_before")
             execution_result.success = True
             execution_result.deliveryToday = True
         except json.JSONDecodeError:
