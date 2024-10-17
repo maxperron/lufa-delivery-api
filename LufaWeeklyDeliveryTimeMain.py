@@ -2,6 +2,7 @@ import os
 import json
 import requests
 import logging
+import sys 
 from datetime import datetime
 from time import strptime
 from selenium import webdriver
@@ -173,7 +174,7 @@ def execute():
     wd = webdriver.Firefox(options=options)
 
     try:
-        logging.debug("Step 1 API Execute")
+        sys.stdout.write('Step 1 API Execute')
         result = api.execute(wd)
     except Exception as e:
         return jsonify({
