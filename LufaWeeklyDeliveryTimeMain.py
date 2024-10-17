@@ -1,6 +1,7 @@
 import os
 import json
 import requests
+import logging
 from datetime import datetime
 from time import strptime
 from selenium import webdriver
@@ -13,6 +14,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+
 
 
 class DeliveryTimeConfig:
@@ -171,6 +173,7 @@ def execute():
     wd = webdriver.Firefox(options=options)
 
     try:
+        logging.debug("Step 1 API Execute")
         result = api.execute(wd)
     except Exception as e:
         return jsonify({
